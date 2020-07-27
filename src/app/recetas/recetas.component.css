@@ -57,3 +57,15 @@
     background-color: rgba(83, 83, 83, 0.178);
     cursor: pointer;
   }
+
+
+  .dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }

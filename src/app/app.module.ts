@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecetasComponent } from './recetas/recetas.component';
+import { ModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { RecetasComponent } from './recetas/recetas.component';
     ContentComponent,
     FooterComponent,
     RecetasComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { RecetasComponent } from './recetas/recetas.component';
     MatInputModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
