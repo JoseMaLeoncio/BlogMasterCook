@@ -3,7 +3,7 @@
       Todo nuestro recetario a tu alcanze.
     </mat-toolbar>
   
-    <mat-drawer-container class="example-container">
+    <mat-drawer-container class="example-container" >
       <!-- <p>Contenido pag principal</p> -->
       <mat-drawer-content>
         <div class="example-container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
@@ -23,8 +23,9 @@
           </mat-card>
         </div>
       </mat-drawer-content>
+
       <ng-template #content let-modal>
-        <div  *ngFor="let rm  of  RecetaModal">
+        <div  *ngFor="let rm  of  RecetaModal" ngb-modal-backdrop="static">
         <div class="modal-header">
           <h1 class="modal-title">{{rm.Nombre}}</h1>
           <h4 class="modal-title"></h4>
@@ -47,6 +48,7 @@
           <button type="button" class="btn btn-light" (click)="modal.close('Close click'); reset()">Close</button>
         </div>
       </div>
+      (click)="modal.close('Close click'); reset()"
       </ng-template>
     </mat-drawer-container>
   <app-footer></app-footer>
