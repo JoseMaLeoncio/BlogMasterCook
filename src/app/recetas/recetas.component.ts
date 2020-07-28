@@ -75,10 +75,11 @@ export class RecetasComponent{
   openXl(content, values) {
     this.RecetaModal.push(values);
     console.log(values);
-    this.modalService.open(content, { size: 'xl' });
+    this.modalService.open(content, { size: 'xl', backdrop: 'static', keyboard: false });
     
   }
   reset(){
     this.RecetaModal=[];
   }
+
 }
