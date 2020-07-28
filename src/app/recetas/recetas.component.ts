@@ -12,52 +12,58 @@ export class RecetasComponent{
   constructor(private modalService: NgbModal) {}
   recetas = [
     {
+      id:0,
       Nombre: "Pozole",
       Autor: "El esponja1",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: 1,
-      Dislikes:1,
+      Likes: 0,
+      Dislikes:0,
     },
     {
+      id:1,
       Nombre: "Pozole",
       Autor: "El esponja2",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: "",
-      Dislikes:"",
+      Likes: 0,
+      Dislikes:0,
     },
     {
+      id:2,
       Nombre: "Pozole",
       Autor: "El esponja3",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: "",
-      Dislikes:"",
+      Likes: 0,
+      Dislikes:0,
     },
     {
+      id:3,
       Nombre: "Pozole",
       Autor: "El esponja4",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: "",
-      Dislikes:"",
+      Likes: 0,
+      Dislikes:0,
     },
     {
+      id:4,
       Nombre: "Pozole",
       Autor: "El esponja5",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: "",
-      Dislikes:"",
+      Likes: 0,
+      Dislikes:0,
     },
     {
+      id:5,
       Nombre: "Pozole",
       Autor: "El esponja6",
       imagen: "../assets/pozole.jpg",
       Descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices.",
-      Likes: "",
-      Dislikes:"",
+      Likes: 0,
+      Dislikes:0,
     }
   ]
   onScroll(e) {
@@ -80,6 +86,28 @@ export class RecetasComponent{
   }
   reset(){
     this.RecetaModal=[];
+  }
+
+  like(value){
+    console.log(value);
+    for (let index = 0; index < this.recetas.length; index++) {
+      let receta = index;
+      if(receta == value){
+        console.log(this.recetas[value]);
+        this.recetas[value].Likes = this.recetas[value].Likes += 1  ;
+      }
+    }
+  }
+
+  dislike(value){
+    console.log(value);
+    for (let index = 0; index < this.recetas.length; index++) {
+      let receta = index;
+      if(receta == value){
+        console.log(this.recetas[value]);
+        this.recetas[value].Dislikes = this.recetas[value].Dislikes += 1  ;
+      }
+    }
   }
 
 }

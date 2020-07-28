@@ -40,8 +40,8 @@
           <br>
           <p>{{rm.Descripcion}}</p>
           <br>
-          <button mat-button><i class="fas fa-heart"> {{rm.Dislikes}}</i></button>
-          <button mat-button><i class="fas fa-heart-broken">  {{rm.Likes}}</i></button>
+          <button mat-button (click)="like(rm.id)"><i class="fas fa-heart"> {{rm.Likes}}</i></button>
+          <button mat-button (click)="dislike(rm.id)"><i class="fas fa-heart-broken">  {{rm.Dislikes}}</i></button>
           
           
         </div>
@@ -49,7 +49,7 @@
           <button type="button" class="btn btn-light" (click)="modal.close('Close click'); reset()">Close</button>
         </div>
       </div>
-      (click)="modal.close('Close click'); reset()"
+      
       </ng-template>
     </mat-drawer-container>
   <app-footer></app-footer>
