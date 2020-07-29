@@ -23,6 +23,7 @@ import { RecetasComponent } from './recetas/recetas.component';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
     RecetasComponent,
     ModalComponent,
     ProfileComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
