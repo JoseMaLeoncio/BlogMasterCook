@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RecetasComponent } from './recetas/recetas.component';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     RecetasComponent,
     ModalComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
