@@ -7,7 +7,7 @@ import { AuthserviceService } from '../services/authservice.service';
 })
 export class ProfileComponent implements OnInit {
 
- 
+  user :any;
   lstRecets:any[]
   constructor(public auth:AuthserviceService) {
     this.lstRecets=[]
@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
 
     this.lstRecets=JSON.parse(localStorage.getItem('lstRecetas'))
     console.log(this.lstRecets);
-    
+    this.user=JSON.parse(localStorage.getItem('user'))
+    console.log(this.user);
   }
 
 }

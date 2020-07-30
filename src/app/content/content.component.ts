@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { recetas } from '../model/recetas';
 
 @Component({
   selector: 'app-content',
@@ -7,51 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
   @Input() deviceXs: boolean;
+  rec : any[];
   constructor(){
 
   }
   topVal = 0;
-  recetas = [
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    },
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    },
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    },
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    },
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    },
-    {
-      "Nombre": "Pozole",
-      "Autor": "El esponja",
-      "imagen": "../assets/pozole.jpg",
-      "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
-    }
-  ]
+  
 
   ngOnInit(): void {
     //location.reload();
+    if(JSON.parse(localStorage.getItem('user'))){
+      this.rec = JSON.parse(localStorage.getItem('Recetas'));
+      console.log(this.rec);
+    }else{
+      this.rec = recetas;
+    }
   }
   onScroll(e) {
     let scrollXs = this.deviceXs ? 55 : 73;
@@ -65,4 +36,5 @@ export class ContentComponent implements OnInit {
     let e = this.deviceXs ? 160 : 130;
     return e - this.topVal;
   }
+  
 }

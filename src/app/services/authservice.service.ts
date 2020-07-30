@@ -43,7 +43,6 @@ export class AuthserviceService {
         location.reload();
       }, 500);
       this._route.navigate(['content']);
-     
     }else{
       this.errormessage="Usuario y/o contraseña incorrecta"
       this._route.navigate(['login'])
