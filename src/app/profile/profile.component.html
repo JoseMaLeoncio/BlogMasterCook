@@ -31,8 +31,35 @@
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-sm-12 text-secondary">
+                    <div class="col-sm-12 text-secondary" style="margin-bottom: 30px;">
                       Mis Recetas
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="example-container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
+                      <!--mat-card class="example-card" *ngFor="let rec of lstRecets">
+                        <mat-card-header>
+                          <mat-card-title>{{rec.Nombre}}</mat-card-title>
+                          <mat-card-subtitle>{{rec.Autor}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="{{rec.imagen}}">
+                        <mat-card-content>
+                          <p>{{rec.Descripcion}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                        </mat-card-actions>
+                      </mat-card-->
+                      <div class="card" style="width: 18rem; height: 6;" *ngFor="let rec of lstRecets">
+                        <img class="card-img-top" src="{{rec.imagen}}" style="width: 200px;" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">{{rec.Nombre}}</h4>
+                          <div class="row">
+                            <div class="col-8">
+                              <h5 class="card-text" style="align-content: center;">{{rec.Descripcion}}</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr>              

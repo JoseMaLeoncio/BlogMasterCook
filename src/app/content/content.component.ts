@@ -1,11 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
   @Input() deviceXs: boolean;
+  constructor(){
+
+  }
   topVal = 0;
   recetas = [
     {
@@ -45,6 +49,10 @@ export class ContentComponent {
       "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo purus, porta sit amet lectus non, auctor dictum nisi. Maecenas sit amet imperdiet lacus. Nam maximus libero id elit condimentum porttitor. Praesent pretium scelerisque quam sodales ultrices."
     }
   ]
+
+  ngOnInit(): void {
+    //location.reload();
+  }
   onScroll(e) {
     let scrollXs = this.deviceXs ? 55 : 73;
     if (e.srcElement.scrollTop < scrollXs) {

@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation , Input} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { AuthserviceService } from '../services/authservice.service';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-recetas',
   templateUrl: './recetas.component.html',
@@ -9,7 +11,7 @@ export class RecetasComponent{
   RecetaModal: any[]=[];
  @Input() deviceXs: boolean;
   topVal = 0;
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, public aut:AuthserviceService, public _route:Router) {}
   recetas = [
     {
       id:0,
@@ -79,11 +81,37 @@ export class RecetasComponent{
     return e - this.topVal;
   }
   openXl(content, values) {
+    if(this.aut.isAutorized()){
     this.RecetaModal.push(values);
     console.log(values);
     this.modalService.open(content, { size: 'xl', backdrop: 'static', keyboard: false });
-    
+    }
+    else{
+      this._route.navigate(['login']);
+    }
   }
+
+  SaveRecet(content, values){
+    console.log(values);
+    this.aut.lstRecetas.push(values);
+    if(localStorage.getItem('lstRecetas')){
+      let memory=[]
+      memory=JSON.parse(localStorage.getItem('lstRecetas'));
+      if(memory.length>this.aut.lstRecetas.length){
+        memory.push(this.aut.lstRecetas[0])
+        localStorage.removeItem('lstRecetas');
+        localStorage.setItem('lstRecetas',JSON.stringify(memory));
+      }else{
+        localStorage.removeItem('lstRecetas');
+        localStorage.setItem('lstRecetas',JSON.stringify(this.aut.lstRecetas));
+      }
+      
+    }else{
+      localStorage.setItem('lstRecetas',JSON.stringify(this.aut.lstRecetas));
+    }
+    console.log(this.aut.lstRecetas);
+  }
+
   reset(){
     this.RecetaModal=[];
   }

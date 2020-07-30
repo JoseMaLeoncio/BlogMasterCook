@@ -17,7 +17,7 @@
               <p>{{rec.Descripcion}}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button>GUARDAR</button>
+              
               <button mat-button (click)="openXl(content, rec)">VER MAS</button>
             </mat-card-actions>
           </mat-card>
@@ -40,13 +40,14 @@
           <br>
           <p>{{rm.Descripcion}}</p>
           <br>
+          <button mat-button (click)="SaveRecet(content,rm)">GUARDAR</button>
           <button mat-button (click)="like(rm.id)"><i class="fas fa-heart"> {{rm.Likes}}</i></button>
           <button mat-button (click)="dislike(rm.id)"><i class="fas fa-heart-broken">  {{rm.Dislikes}}</i></button>
           
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-light" (click)="modal.close('Close click'); reset()">Close</button>
+        
         </div>
       </div>
       

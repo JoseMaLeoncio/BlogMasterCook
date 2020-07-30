@@ -5,7 +5,6 @@
       <div *ngIf="!deviceXs" fxLayout="row">
         <button mat-button [routerLink]="['content']">Inicio</button>
         <button mat-button [routerLink]="['recetas']">Recetas</button>
-        <button mat-button>Contactanos</button>
       </div>
     </div>
     <div>
@@ -23,14 +22,14 @@
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
-    <button mat-button>Home</button>
-    <button mat-button>About us</button>
-    <button mat-button>Contact us</button>
+    <button mat-button>Inicio</button>
+    <button mat-button>Recetas</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <!-- Elementos Menu -->
 <mat-menu #menu="matMenu" fxLayoutAlign="end">
-  <button mat-menu-item [routerLink]="['login']">Iniciar Sesion</button>
-  <button mat-menu-item>Registrate</button>
-  <button mat-menu-item [routerLink]="['profile']">Perfil</button>
+  <button mat-menu-item *ngIf="!isLogge"  [routerLink]="['login']">Iniciar Sesion</button>
+  <button mat-menu-item *ngIf="!isLogge" >Registrate</button>
+  <button mat-menu-item *ngIf="isLogge" [routerLink]="['profile']">Perfil</button>
+  <button mat-menu-item *ngIf="isLogge" (click)="cerrarSesion()" >Cerrar sesión</button>
 </mat-menu>
