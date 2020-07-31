@@ -53,6 +53,7 @@ export class AuthserviceService {
   logout(){
     this.user=null;
     this.lstRecetas=[];
+    localStorage.removeItem("user");
     localStorage.clear();
   }
 

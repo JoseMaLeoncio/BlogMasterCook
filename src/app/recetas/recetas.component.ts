@@ -19,6 +19,9 @@ export class RecetasComponent{
     if(JSON.parse(localStorage.getItem('user'))){
       
       this.rec = JSON.parse(localStorage.getItem('Recetas'));
+      if(this.rec === null){
+        this.rec = recetas;
+      }
       console.log(this.rec);
     }else{
       this.rec = recetas;

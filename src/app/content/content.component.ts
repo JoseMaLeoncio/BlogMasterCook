@@ -19,9 +19,16 @@ export class ContentComponent implements OnInit {
     //location.reload();
     if(JSON.parse(localStorage.getItem('user'))){
       this.rec = JSON.parse(localStorage.getItem('Recetas'));
+      if(this.rec === null){
+        this.rec = recetas;
+      }
       console.log(this.rec);
+      console.log("si");
+      
     }else{
       this.rec = recetas;
+      console.log(this.rec);
+      console.log("no");
     }
   }
   onScroll(e) {
