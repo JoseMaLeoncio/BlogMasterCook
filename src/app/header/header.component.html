@@ -22,8 +22,8 @@
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
-    <button mat-button>Inicio</button>
-    <button mat-button>Recetas</button>
+    <button mat-button [routerLink]="['content']">Inicio</button>
+    <button mat-button [routerLink]="['recetas']">Recetas</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <!-- Elementos Menu -->
