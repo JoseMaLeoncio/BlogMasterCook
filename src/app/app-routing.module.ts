@@ -13,7 +13,7 @@ const router: Routes = [
   {path: 'modal', component:ModalComponent},
   {path: 'profile', component:ProfileComponent},
   {path: 'login', component:LoginComponent},
-  {path:'**',pathMatch:'full', redirectTo: 'recetas'},
+  {path:'**',pathMatch:'full', redirectTo: 'content'},
 ]
 
 

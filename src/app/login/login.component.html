@@ -1,3 +1,19 @@
+<article [class.content]="!deviceXs" [class.content-mob]="deviceXs" (scroll)="onScroll($event)">
+<mat-drawer-container class="example-container">  
+<div class="login-page">
+  <div class="form">
+    <img src="./assets/login2.png" style="margin-bottom: 15px;">
+    <form ngNativeValidate #form="ngForm" class="login-form" id="loginform"
+    (ngSubmit)="ingresar(form)">
+    <input ngModel name="email" class="form-control" type="email" placeholder="Correo" required>
+    <input ngModel name="password" class="form-control" type="password" placeholder="Contraseña" required>
+    <div *ngIf="errorMessage" class="form-group row" style="margin-left: 6px;">
+      <div>
+          <h6 class="text-danger" style="font-size: 12px; font-weight: 500;">{{errorMessage}}</h6>
+      </div>
+    </div>
+    <button type="submit">login</button>
+
 
 <!--div fxLayout="row" fxLayoutAlign="center center" class="login-main" style="margin-top: 200px;">
   <mat-card>
@@ -39,3 +55,10 @@
   </div>
   </mat-drawer-container>
   </article>
+
+  </form>
+  </div>
+</div>
+</mat-drawer-container>
+</article>
+
